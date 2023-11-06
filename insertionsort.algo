@@ -1,0 +1,24 @@
+/* An alogtithm to implement the insertion sort algorithm 
+using the concept of sorting a deck of playing cards.
+,makinig space for each card and placing it in the right spot to achieve a fully sorted deck.
+*/
+ALGORITHM insertion_sort
+VAR
+    arr : ARRAY_OF INTEGER[60];
+    i,j, key: INTEGER;
+BEGIN
+    //sort the array using insertion sort concept
+    FOR i FROM 1 TO arr.length -1 DO
+        key = arr[i]                  // picks a card from the unsorted pile
+        j:= i - 1;                     // counter to start by comparing with the right-most/first (highest) card in the sorted pile
+
+        WHILE (j >= 0 AND arr[j] > key) DO
+            arr[j+1] = arr[j];          // moves larger element to the right 
+            j: = j - 1;
+        END_WHILE
+        arr[j+1] = key                //inserts the card into the correct spot in the sorted pile    
+
+    END_FOR
+
+
+END
